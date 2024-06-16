@@ -21,6 +21,6 @@ public class PlayArea extends EndConditions{
         int i = indices[0];
         int j = indices[1];
         if (area[i][j] == '\0')
-            area[indices[0]][indices[1]] = ch;
+            area[i][j] = ch;
     }
 }
