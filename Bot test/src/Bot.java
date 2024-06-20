@@ -8,8 +8,8 @@ public class Bot extends PlayArea{
     Bot(char a, char h) {
         ai = a;
         human = new Player(h);
-        scores.put('X', 1);
-        scores.put('O', -1);
+        scores.put(a, 1);
+        scores.put(h, -1);
         scores.put('D', 0);
     }
 
