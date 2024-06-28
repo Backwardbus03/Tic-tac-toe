@@ -54,7 +54,7 @@ class GameViewModel : ViewModel() {
             )
             return
         }
-        if (checkForVictory(state.currentTurn)) {
+        if (checkForVictory(BoardCellValue.CIRCLE) || checkForVictory(BoardCellValue.CROSS)) {
             state = if (state.currentTurn == BoardCellValue.CIRCLE) {
                 state.copy(
                     hintText = "Player 'O' won",
@@ -70,9 +70,7 @@ class GameViewModel : ViewModel() {
                     hasWon = true
                 )
             }
-            return
-        }
-        if (state.currentTurn == BoardCellValue.CIRCLE) {
+        } else if (state.currentTurn == BoardCellValue.CIRCLE) {
             boardItems[cellNo] = BoardCellValue.CIRCLE
             state = state.copy(
                 currentTurn = BoardCellValue.CROSS,
